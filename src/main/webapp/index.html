@@ -3,19 +3,24 @@
     <head>
         <title>rest-template</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="jquery-3.2.1.min.js"></script>
-        <script language="javascript">
-            $(document).ready(function() {
-				$.get("rest/thepath", function(data){
-					$("#myid").html(data);
-				});
-            });
-        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <div id="myid"></div>
+    <input id="newId" type="text" value="id">
+    <input id="quizID" type="text" value="quizID">
+    <input id="spmtext" type="text" value="Spørsmål">
+    <input id="ans1" type="text" value="Answer 1">
+    <input id="ans2" type="text" value="Answer 2">
+    <input id="ans3" type="text" value="Answer 3">
+    <input id="ans4" type="text" value="Answer 4">
+    <input id="riktigIndex" type="text" value="Riktig index">
+    <input id="tid" type="text" value="Tid">
+
+    <button id="submit">Create Question</button>
+    <script defer src="script.js"></script>
     </body>
 </html>
 

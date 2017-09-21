@@ -11,6 +11,7 @@ import java.util.HashMap;
 @Path("/questions/")
 public class QuestionService implements Serializable{
     static HashMap<Integer, QuestionBean> questions = new HashMap<Integer, QuestionBean>();
+    static int idTracker = 0;
 
     @GET
     @Path("/{id}")
@@ -24,7 +25,9 @@ public class QuestionService implements Serializable{
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void createQuestion(QuestionBean question){
+        question.setId(idTracker);
         questions.putIfAbsent(question.getId(), question);
+        idTracker ++;
     }
 
     @DELETE

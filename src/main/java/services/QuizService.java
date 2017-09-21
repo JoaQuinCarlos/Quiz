@@ -1,5 +1,6 @@
 package services;
 
+import beans.QuestionBean;
 import beans.QuizBean;
 
 import javax.ws.rs.*;
@@ -7,6 +8,7 @@ import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 @Path("/quiz/")
 public class QuizService implements Serializable{
@@ -30,6 +32,12 @@ public class QuizService implements Serializable{
         quiz.setId(idTracker);
         quizzes.putIfAbsent(quiz.getId(), quiz);
         idTracker ++;
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateQuiz(QuizBean quiz){
+
     }
 
     @DELETE

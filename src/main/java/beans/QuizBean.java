@@ -44,7 +44,7 @@ public class QuizBean implements Serializable{
         return startTid;
     }
 
-    public void setStartTid(LocalDateTime startTid){this.startTid = startTid;}
+    public void setStartTid(String startTid){this.startTid = LocalDateTime.parse(startTid);}
 
     public List<SpillerBean> getSpillere(){return spillere;}
 

@@ -1,7 +1,25 @@
 #websiteTitle{
-    font-size: 7em;
+     font-size: 7em;
+     vertical-align: middle;
+     font-family: 'Pacifico', cursive;
+     padding-left: 15px;
+     color: #191970;
+ }
+
+#title{
+    font-size: 3em;
     vertical-align: middle;
     font-family: 'Pacifico', cursive;
     padding-left: 15px;
     color: #191970;
+}
+
+#format{
+    font-size: 1.2em;
+    color: red;
+}
+
+#addnr3{
+    height: 48px;
+    width: 48px;
 }

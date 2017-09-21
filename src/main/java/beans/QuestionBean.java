@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by Joppe on 19.09.2017.
  */
-public class SpørsmålBean implements Serializable{
+public class QuestionBean implements Serializable{
 
     @XmlElement(name="id")
     private int id;

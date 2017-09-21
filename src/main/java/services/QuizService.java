@@ -21,7 +21,7 @@ public class QuizService implements Serializable{
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public QuizBean getSpørsmål(@PathParam("id") int id){return quizzes.get(id);}
+    public QuizBean getQuiz(@PathParam("id") int id){return quizzes.get(id);}
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

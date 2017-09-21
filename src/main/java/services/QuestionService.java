@@ -1,6 +1,6 @@
 package services;
 
-import beans.SpørsmålBean;
+import beans.QuestionBean;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -9,22 +9,22 @@ import java.util.Collection;
 import java.util.HashMap;
 
 @Path("/questions/")
-public class SpørsmålService implements Serializable{
-    static HashMap<Integer, SpørsmålBean> questions = new HashMap<Integer, SpørsmålBean>();
+public class QuestionService implements Serializable{
+    static HashMap<Integer, QuestionBean> questions = new HashMap<Integer, QuestionBean>();
 
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public SpørsmålBean getSpørsmål(@PathParam("id") int id){return questions.get(id);}
+    public QuestionBean getQuestion(@PathParam("id") int id){return questions.get(id);}
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<SpørsmålBean> getQuestions(){return questions.values();}
+    public Collection<QuestionBean> getQuestions(){return questions.values();}
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void lagSpørsmål(SpørsmålBean spørsmål){
-        questions.putIfAbsent(spørsmål.getId(), spørsmål);
+    public void createQuestion(QuestionBean question){
+        questions.putIfAbsent(question.getId(), question);
     }
 
     @DELETE

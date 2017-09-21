@@ -3,24 +3,38 @@
     <head>
         <title>rest-template</title>
         <meta charset="UTF-8">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        <script
+                src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
+        <script defer src="script.js"></script>
     </head>
 
     <body>
-    <input id="newId" type="text" value="id">
-    <input id="quizID" type="text" value="quizID">
-    <input id="spmtext" type="text" value="Spørsmål">
+    <div>ID:
+    <input id="newId" type="number" value="0">
+    </div><br>
+
+    <div>Spørsmålstekst:
+    <input id="spmtext" type="text" value="Question">
+    </div> <br>
+
+    <div>Alternativer:
     <input id="ans1" type="text" value="Answer 1">
     <input id="ans2" type="text" value="Answer 2">
     <input id="ans3" type="text" value="Answer 3">
     <input id="ans4" type="text" value="Answer 4">
-    <input id="riktigIndex" type="text" value="Riktig index">
-    <input id="tid" type="text" value="Tid">
+    </div> <br>
+
+    <div>Riktig index:
+    <input id="riktigIndex" type="number" value="0">
+    </div> <br>
+
+    <div>Tid:
+    <input id="tid" type="number" value="0">
+    </div><br>
 
     <button id="submit">Create Question</button>
-    <script defer src="script.js"></script>
     </body>
 </html>
 

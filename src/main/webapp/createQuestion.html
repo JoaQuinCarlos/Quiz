@@ -10,10 +10,8 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" type="text/css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 </head>
 
 <body>
@@ -29,6 +27,21 @@
     </div>
 
     <div class="jumbotron">
+
+        <h2 id="format" class="strong">Date format: "YYYY-MM-DDTHH:MM:SS"</h2>
+
+        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12">
+            <span class="input-group-addon">Quiz name</span>
+            <input type="text" class="form-control" id="quizName">
+        </div>
+
+        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12">
+            <span class="input-group-addon ">Start time</span>
+            <input type="text" class="form-control" id="startTime">
+        </div>
+
+        <br>
+
         <p>Please enter the information for the question below.</p>
 
         <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12">
@@ -51,14 +64,12 @@
             <input type="text" class="form-control" id="answer2">
         </div>
 
-        <button class="glyphicon glyphicon-plus" id="addnr3"></button>
-
-        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12 hidden" id="answer3div">
+        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12" id="answer3div">
             <span class="input-group-addon">Answer 3</span>
             <input type="text" class="form-control" id="answer3">
         </div>
 
-        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12 hidden" id="answer4div">
+        <div class="input-group input-group-lg col-lg-6 col-md-8 col-sm-12 col-xs-12" id="answer4div">
             <span class="input-group-addon">Answer 4</span>
             <input type="text" class="form-control" id="answer4">
         </div> <br>
@@ -78,5 +89,6 @@
 
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

@@ -2,8 +2,6 @@ package beans;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,10 +19,10 @@ public class QuizBean implements Serializable{
     private String navn;
 
     @XmlElement(name="startTid")
-    private LocalDateTime startTid;
+    private String startTid;
 
-    @XmlElement(name="spillere")
-    private List<SpillerBean> spillere;
+    @XmlElement(name="players")
+    private List<PlayerBean> players;
 
     public int getId(){return id;}
 
@@ -40,13 +38,13 @@ public class QuizBean implements Serializable{
 
     public void setNavn(String navn){this.navn = navn;}
 
-    public LocalDateTime getStartTid(){
+    public String getStartTid(){
         return startTid;
     }
 
-    public void setStartTid(String startTid){this.startTid = LocalDateTime.parse(startTid);}
+    public void setStartTid(String startTid) {this.startTid = startTid;}
 
-    public List<SpillerBean> getSpillere(){return spillere;}
+    public List<PlayerBean> getPlayers(){return players;}
 
-    public void setSpillere(List<SpillerBean> spillere){this.spillere = spillere;}
+    public void setPlayers(List<PlayerBean> players){this.players = players;}
 }

@@ -3,7 +3,6 @@
  */
 $(document).ready(function(){
 
-const theData = [];
 var questions = [];
 
     $("#submitQuestion").click(function(){
@@ -46,7 +45,7 @@ var questions = [];
             type: 'POST',
             data: JSON.stringify({
                 navn: $("#quizName").val(),
-                startTid: $("#startTime").val(),
+                startTid:  new Date($('#startTime').val()),
                 question: questions
             }),
             contentType: 'application/json; charset=utf-8',
@@ -54,28 +53,5 @@ var questions = [];
         });
         questions = [];
     });
-
-    $.getJSON("rest/quiz", function(data){
-        $.each(data, function(key, val){
-            theData.push(val);
-        });
-        showQuizzes();
-    });
-
-    function showQuizzes(){
-        $("#body").html("");
-        for(var i = 0; i < theData.length; i++){
-            var questions;
-            if(theData[i].question === null){questions = 0;} else{questions = theData[i].question.length;}
-            $("#body").append('<tr id="' + theData[i].id + '">' +
-                '<td>' + theData[i].id + '</td>' +
-                '<td>' + theData[i].navn + '</td>' +
-                '<td>' + questions + '</td>' +
-                '<td>' + theData[i].startTid.toString() + '</td>' +
-                '<td><a href="quiz.html"><span class="glyphicon glyphicon-ok"></span></a></td>' +
-                '<td><a href="scores.html"><span class="glyphicon glyphicon-stats"></span></a></td>' +
-                '</tr>');
-        }
-    }
 });
 

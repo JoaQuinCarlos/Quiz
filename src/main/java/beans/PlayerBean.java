@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * Created by Joppe on 21.09.2017.
  */
-public class SpillerBean implements Serializable{
+public class PlayerBean implements Serializable{
 
     @XmlElement(name="id")
     private int id;

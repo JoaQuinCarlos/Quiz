@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 @Path("/player/")
 public class PlayerService implements Serializable{
-    static HashMap<Integer, PlayerBean> players = new HashMap<Integer, PlayerBean>();
+    static HashMap<String, PlayerBean> players = new HashMap<String, PlayerBean>();
     static int idTracker = 0;
 
     @GET
@@ -20,15 +20,15 @@ public class PlayerService implements Serializable{
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/{navn}")
     @Produces(MediaType.APPLICATION_JSON)
-    public PlayerBean getPlayer(@PathParam("id") int id){return players.get(id);}
+    public PlayerBean getPlayer(@PathParam("navn") String navn){return players.get(navn);}
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void lagPlayer(PlayerBean player){
         player.setId(idTracker);
-        players.putIfAbsent(player.getId(), player);
+        players.putIfAbsent(player.getNavn(), player);
         idTracker ++;
     }
 

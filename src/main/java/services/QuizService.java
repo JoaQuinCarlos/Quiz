@@ -35,9 +35,17 @@ public class QuizService implements Serializable{
     }
 
     @PUT
+    @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void updateQuiz(QuizBean quiz){
-
+    public void updateQuiz(@PathParam("id") int id, QuizBean quiz){
+        QuizBean q = quizzes.get(id);
+        if (q == null) throw new NotFoundException("Not found");
+        q.setNavn(quiz.getNavn());
+        q.setQuestion(quiz.getQuestion());
+        q.setStartTid(quiz.getStartTid());
+        q.setId(quiz.getId());
+        q.setPlayers(quiz.getPlayers());
+        quizzes.put(id, q);
     }
 
     @DELETE

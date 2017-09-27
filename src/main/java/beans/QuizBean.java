@@ -2,6 +2,7 @@ package beans;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public class QuizBean implements Serializable{
     private int id;
 
     @XmlElement(name="question")
-    private List<QuestionBean> question;
+    private List<QuestionBean> question = new ArrayList<QuestionBean>();
 
     @XmlElement(name="navn")
     private String navn;
@@ -22,7 +23,7 @@ public class QuizBean implements Serializable{
     private String startTid;
 
     @XmlElement(name="players")
-    private List<PlayerBean> players;
+    private List<PlayerBean> players = new ArrayList<PlayerBean>();
 
     public int getId(){return id;}
 

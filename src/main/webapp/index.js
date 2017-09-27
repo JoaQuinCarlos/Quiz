@@ -2,29 +2,6 @@
  * Created by Joppe on 26.09.2017.
  */
 $(document).ready(function() {
-
-    /* $("#refresh").click(function(){
-        $.ajax({
-            url: 'rest/quiz',
-            type: 'POST',
-            data: JSON.stringify({
-                navn: "heihei",
-                players: [
-                    {
-                        navn: "ost",
-                        score: 10
-                    },
-                    {
-                        navn: "ja",
-                        score: 5
-                    }
-                ]
-            }),
-            contentType: 'application/json; charset=utf-8',
-            datatype: 'json'
-        });
-    }); */
-
     const theData = [];
 
     $.getJSON("rest/quiz/", function(data){
@@ -50,7 +27,7 @@ $(document).ready(function() {
                 '<td>' + theData[i].navn + '</td>' +
                 '<td>' + questions + '</td>' +
                 '<td>' + date.toLocaleString() + '</td>' +
-                '<td><a href="quiz.html#' + id + '"><span id= "' + id + '" class="quiz glyphicon glyphicon-ok"></span></a></td>' +
+                '<td><a href="register.html#' + id + '"><span id= "' + id + '" class="quiz glyphicon glyphicon-ok"></span></a></td>' +
                 '<td><a href="scores.html#' + id + '"><span id= "' + id + '" class="scores glyphicon glyphicon-stats"></span></a></td>' +
                 '</tr>');
         }
